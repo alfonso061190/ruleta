@@ -75,13 +75,15 @@
 				'callbackFinished': 'Mensaje()',
 				'callbackAfter': 'dibujarIndicador()'
 			}
+
+
 		
 		});
 
 
 		function Mensaje() {
            var SegmentoSeleccionado = miRuleta.getIndicatedSegment();
-           alert("Elemento seleccionado:" + SegmentoSeleccionado.text + "!");
+           alert("El afortunado ganador es: " + SegmentoSeleccionado.text + "!");
            //Reinicio de la ruletaa (valor inicial)
            miRuleta.stopAnimation(false);
            miRuleta.rotationAngle = 0;
