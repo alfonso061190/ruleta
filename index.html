@@ -40,33 +40,13 @@
 	<script>
 		
 		var miRuleta = new Winwheel ({
-			'numSegments': 22,
+			'numSegments': 0,
 			'outerRadius': 170,
 			
 
 			'segments':[
-			{'fillStyle': '#f1c40f', 'textFontSize' : 14, 'text': 'Roberto Perez'},
-			{'fillStyle': '#2ecc71', 'textFontSize' : 14, 'text': 'Marcelo Ornelas'},
-			{'fillStyle': '#e67e22', 'textFontSize' : 14, 'text': 'Omar Ramirez'},
-			{'fillStyle': '#e74c3c', 'textFontSize' : 14, 'text': 'Jose Cintora'},
-			{'fillStyle': '#8e44ad', 'textFontSize' : 14, 'text': 'Antonio Molina'},
-			{'fillStyle': '#f1c40f', 'textFontSize' : 14, 'text': 'Fco Granados'},
-			{'fillStyle': '#2ecc71', 'textFontSize' : 14, 'text': 'Maricela Sanchez'},
-			{'fillStyle': '#e67e22', 'textFontSize' : 14, 'text': 'Fco. Hernandez'},
-			{'fillStyle': '#e74c3c', 'textFontSize' : 14, 'text': 'Leonel Navarro'},
-			{'fillStyle': '#8e44ad', 'textFontSize' : 14, 'text': 'Fco Romero'},
-			{'fillStyle': '#f1c40f', 'textFontSize' : 14, 'text': 'Antonio Ortega'},
-			{'fillStyle': '#2ecc71', 'textFontSize' : 14, 'text': 'Armando Aguilera'},
-			{'fillStyle': '#e67e22', 'textFontSize' : 14, 'text': 'Jesus Nieto'},
-			{'fillStyle': '#e74c3c', 'textFontSize' : 14, 'text': 'Victor Rosales'},
-			{'fillStyle': '#8e44ad', 'textFontSize' : 14, 'text': 'Rafael Caudillo'},
-			{'fillStyle': '#f1c40f', 'textFontSize' : 14, 'text': 'Jose Sanchez'},
-			{'fillStyle': '#2ecc71', 'textFontSize' : 14, 'text': 'Jose Frias'},
-			{'fillStyle': '#e67e22', 'textFontSize' : 14, 'text': 'Alejandro Coordero'},
-			{'fillStyle': '#e74c3c', 'textFontSize' : 14, 'text': 'Juan Cardier'},
-			{'fillStyle': '#8e44ad', 'textFontSize' : 14, 'text': 'Jose Gonzalez'},
-			{'fillStyle': '#f1c40f', 'textFontSize' : 14, 'text': 'Mtto Miselaneos'},
-			{'fillStyle': '#2ecc71', 'textFontSize' : 14, 'text': 'Mtto Cabinas'},
+			
+		
 
 			],
 			'animation':{
@@ -76,9 +56,37 @@
 				'callbackAfter': 'dibujarIndicador()'
 			}
 
-
 		
 		});
+
+				 function addSegment()
+    {
+        // Use a date object to set the text of each added segment to the current minutes:seconds
+        // (just to give each new segment a different label).
+        let date = new Date();
+ 
+        // The Second parameter in the call to addSegment specifies the position,
+        // in this case 1 meaning the new segment goes at the start of the wheel.
+        miRuleta.addSegment({
+            'text' : date.getMinutes() + ':' + date.getSeconds(),
+            'fillStyle' : 'red'
+        }, 1);
+ 
+        // The draw method of the wheel object must be called in order for the changes
+        // to be rendered.
+        miRuleta.draw();
+    }
+
+    function deleteSegment()
+    {
+        // Call function to remove a segment from the wheel, by default the last one will be
+        // removed; you can pass in the number of the segment to delete if desired.
+        miRuleta.deleteSegment();
+ 
+        // The draw method of the wheel object must be called to render the changes.
+        miRuleta.draw();
+    }
+
 
 
 		function Mensaje() {
@@ -106,7 +114,12 @@
             ctx.fill();                  
        }
 
-	</script>	
 
+
+	</script>
+
+	<input type="text" name="nombre">
+	<button onClick="addSegment();">Add Segment</button>
+	<button onClick="deleteSegment();">Delete Segment</button>
 </body>
 </html>
