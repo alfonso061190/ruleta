@@ -30,13 +30,13 @@
 
 			<td>
 				<label for="nombre">Name:</label>
-				<input type="text" id="inputText2" required>
+				<input type="text" id="nombre" required>
 				<br>
 				<br>
 				<br><p>
-				<input type="button" id="botonText" onclick="addSegment()" value="enviar" >
-				<button onClick="addSegment();">Add Name</button>        
-				<button onClick="deleteSegment();">Delete Name</button></p>
+				<!--<input type="button" id="botonText" onclick="addSegment()" value="enviar" >-->
+				<button id="botonText" onclick="addSegment();">Add Name</button>        
+				<button onclick="deleteSegment();">Delete Name</button></p>
 				<br>
 				<br>
 				<img src="img/gms.jpg"  width="350px" height="250px"></td>
@@ -72,23 +72,32 @@
 		
 		});
 
-				 function addSegment()
+	 function addSegment()
     {
         // Use a date object to set the text of each added segment to the current minutes:seconds
         // (just to give each new segment a different label).
         
- 			var texto=document.getElementById("inputText2").value;
+		var texto=document.getElementById("nombre").value;
         // The Second parameter in the call to addSegment specifies the position,
         // in this case 1 meaning the new segment goes at the start of the wheel.
-        miRuleta.addSegment({
-           
-           'text' : document.getElementById("inputText2").value=texto,
-            'fillStyle' : 'red'
-        }, 1);
- 
-        // The draw method of the wheel object must be called in order for the changes
-        // to be rendered.
-        miRuleta.draw();
+
+        /***Se asegura que el campo contenga al menos una letra***/
+        if(texto != '' && texto.trim().length > 0){
+	        miRuleta.addSegment({
+	           
+	           'text' : document.getElementById("nombre").value=texto,
+	            'fillStyle' : 'red'
+	        }, 1);
+	 
+	        // The draw method of the wheel object must be called in order for the changes
+	        // to be rendered.
+	        miRuleta.draw();
+
+	        /***Limpia el campo***/
+	        document.getElementById("nombre").value = "";
+    	} else{
+    		alert('Ningún nombre para capturar')
+    	}
     }
 
     function deleteSegment()
