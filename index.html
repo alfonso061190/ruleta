@@ -26,12 +26,24 @@
 	
 	<table border="0" cellpadding="40" cellspacing="0">
 		
-		<tr>	
-			<td><h1><input type="button" value= "        Girar        " onclick="miRuleta.startAnimation();"></h1> <br><img src="img/gms.png"  width="350px" height="250px"></td>
+		<tr>
+
+			<td>
+				<label for="nombre">Name:</label>
+				<input type="text" name="nombre">
+				<br>
+				<br>
+				<br><p>
+				<button onClick="addSegment();">Add Name</button>        
+				<button onClick="deleteSegment();">Delete Name</button></p>
+				<br>
+				<br>
+				<img src="img/gms.jpg"  width="350px" height="250px"></td>
 			<td>
 				<canvas id="canvas" height="400" width="400"></canvas> </td>
 			<td>
-				<img src="img/trip.jpg"  width="390px" height="80px">
+				
+				<h1><input type="button" value= "        Girar        " onclick="miRuleta.startAnimation();"></h1>
 				<br><br><br><br><br><img src="img/logo.png"  width="380px" height="80px">
 			</td>
 			
@@ -118,8 +130,6 @@
 
 	</script>
 
-	<input type="text" name="nombre">
-	<button onClick="addSegment();">Add Segment</button>
-	<button onClick="deleteSegment();">Delete Segment</button>
+	
 </body>
 </html>
