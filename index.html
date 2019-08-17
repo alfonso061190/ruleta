@@ -30,10 +30,11 @@
 
 			<td>
 				<label for="nombre">Name:</label>
-				<input type="text" name="nombre">
+				<input type="text" id="inputText2">
 				<br>
 				<br>
 				<br><p>
+				<input type="button" id="botonText" onclick="addSegment()" value="enviar" >
 				<button onClick="addSegment();">Add Name</button>        
 				<button onClick="deleteSegment();">Delete Name</button></p>
 				<br>
@@ -75,12 +76,13 @@
     {
         // Use a date object to set the text of each added segment to the current minutes:seconds
         // (just to give each new segment a different label).
-        let date = new Date();
- 
+        
+ 			var texto=document.getElementById("inputText2").value;
         // The Second parameter in the call to addSegment specifies the position,
         // in this case 1 meaning the new segment goes at the start of the wheel.
         miRuleta.addSegment({
-            'text' : date.getMinutes() + ':' + date.getSeconds(),
+           
+           'text' : document.getElementById("inputText2").value=texto,
             'fillStyle' : 'red'
         }, 1);
  
