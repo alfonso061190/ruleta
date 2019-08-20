@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,user-scalable=no">
-	<title> </title>
+	<title>Ruleta </title>
 	<script src="js/TweenMax.min.js"></script>
 	<script src="js/winwheel.min.js"></script>  
 
@@ -55,6 +55,7 @@
 		var miRuleta = new Winwheel ({
 			'numSegments': 0,
 			'outerRadius': 170,
+			//'innerRadius'   : 20,  
 			
 
 			'segments':[
@@ -68,6 +69,7 @@
 				'callbackFinished': 'Mensaje()',
 				'callbackAfter': 'dibujarIndicador()'
 			}
+
 
 		
 		});
