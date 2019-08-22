@@ -5,7 +5,8 @@
 	<meta name="viewport" content="width=device-width,user-scalable=no">
 	<title>Ruleta </title>
 	<script src="js/TweenMax.min.js"></script>
-	<script src="js/winwheel.min.js"></script>  
+	<script src="js/winwheel.min.js"></script> 
+	<link rel="stylesheet" href="css/estilos.css"> 
 
 </head>
 <body>
@@ -35,8 +36,8 @@
 				<br>
 				<br><p>
 				<!--<input type="button" id="botonText" onclick="addSegment()" value="enviar" >-->
-				<button id="botonText" onclick="addSegment();">Add Name</button>        
-				<button onclick="deleteSegment();">Delete Name</button></p>
+				<button id="botonText" onclick="addSegment();" style="background: #28CE53">Add Name</button>        
+				<button onclick="deleteSegment();" style="background: #CD5C5C">Delete Name</button></p>
 				<br>
 				<br>
 				<img src="img/gms.jpg"  width="350px" height="250px"></td>
@@ -44,7 +45,8 @@
 				<canvas id="canvas" height="400" width="400"></canvas> </td>
 			<td>
 				
-				<h1><input type="button" value= "        Play!!!        " onclick="miRuleta.startAnimation();"></h1>
+				<!--<h1><input type="button" value= "        Play!!!        " onclick="miRuleta.startAnimation();" style="background: yellow"></h1> -->
+				<button onclick="miRuleta.startAnimation();" style="background: #E3E60C">Play!!!</button>
 				<br><br><br><br><br><img src="img/logo.png"  width="380px" height="80px">
 			</td>
 			

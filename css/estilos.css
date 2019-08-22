@@ -1,0 +1,18 @@
+body{
+	background-color: #D6CFB1;
+
+	
+}
+
+button{
+
+	  	font-size:15px;
+        font-family:Verdana,Helvetica;
+        font-weight:bold;
+        color:white;
+        background:#638cb5;
+        border:0px;
+        width:120px;
+        height:30px;
+	
+}
